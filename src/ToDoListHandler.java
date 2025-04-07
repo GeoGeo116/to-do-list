@@ -18,26 +18,65 @@ public class ToDoListHandler {
         boolean running = true;
         while(running){
             menu.printMenu();
-            int userInput = scanner.nextInt();
-            if(userInput == 1){
-                menu.printTasks();
+            try {
+                int userInput = scanner.nextInt();
                 scanner.nextLine();
-                scanner.nextLine();
-            }else if(userInput==2){
-                menu.printAddTask();
-                scanner.nextLine();
-                String taskName = scanner.nextLine();
-                String taskDate = scanner.nextLine();
-                Task aTask;
-                if(taskDate==null || taskDate==""){
-                    aTask = new Task(taskName);
-                }else{
-                    aTask = new Task(taskName, taskDate);
+                switch(userInput){
+                    case 1:
+                        menu.printTasks();
+                        scanner.nextLine();
+                        break;
+                    case 2:
+                        addTask();
+                        break;
+                    case 3:
+                        deleteTask();
+                        break;
+                    case 4:
+                        running = false;
+                        break;
+                    default:
+                        System.out.println("Not a valid option");
+                        break;
                 }
-                toDoList.addTask(aTask);
+            }catch(Exception e){
+                System.out.println("Please enter a valid number");
+                scanner.nextLine();
             }
         }
     }
 
+    /**
+     * Runs a code block to add a task
+     */
+    public void addTask(){
+        menu.printAddTask();
+        String taskName = scanner.nextLine();
+        String taskDate = scanner.nextLine();
+        Task aTask;
+        if(taskDate==null || taskDate==""){
+            aTask = new Task(taskName);
+        }else{
+            aTask = new Task(taskName, taskDate);
+        }
+        toDoList.addTask(aTask);
+    }
+
+    /**
+     * Runs a code block to delete a task
+     */
+    public void deleteTask(){
+        menu.printDeleteTask();
+        try{
+            int taskNumber = scanner.nextInt();
+            if(toDoList.getToDoList().containsKey(taskNumber)) {
+                toDoList.deleteTask(taskNumber);
+            }else{
+                System.out.println("There is no task with that number");
+            }
+        } catch (Exception e) {
+            System.out.println("Please enter a valid number");
+        }
+    }
 
 }

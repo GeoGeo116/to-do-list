@@ -22,6 +22,7 @@ import java.util.TreeMap;
         System.out.println("1. View to-do list");
         System.out.println("2. Add a task");
         System.out.println("3. Delete a task");
+        System.out.println("4. Exit the program");
     }
 
     /**
@@ -31,6 +32,15 @@ import java.util.TreeMap;
         System.out.println("Enter your task in the following format");
         System.out.println("[Task name] PRESS ENTER");
         System.out.println("(Optional) [Date Due] PRESS ENTER");
+    }
+
+    /**
+     * Uses the printTasks method to print a list of the tasks
+     * and prompts user for input on the task to delete
+     */
+    public void printDeleteTask(){
+        printTasks();
+        System.out.println("Please enter your task number");
     }
 
     /**

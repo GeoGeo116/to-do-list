@@ -62,7 +62,7 @@ public class ToDoList {
     }
 
     /**
-     * Gets a specfic task from the to-do list
+     * Gets a specific task from the to-do list
      * @param taskNumber The number of the task to return
      * @return A Task object corresponding to the task number
      */
