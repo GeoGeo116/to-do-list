@@ -17,7 +17,7 @@ import java.util.TreeMap;
      *  3. Delete a task
      */
     public void printMenu(){
-        System.out.println("=======TO-DO LIST===========");
+        System.out.println("===========MENU===========");
         System.out.println("Please enter your choice");
         System.out.println("1. View to-do list");
         System.out.println("2. Add a task");
@@ -37,6 +37,7 @@ import java.util.TreeMap;
      * Prints out all the tasks that need completing as an ordered list
      */
     public void printTasks(){
+        System.out.println("===========TO-DO LIST===========");
         for(Integer taskNumber : toDoList.getToDoList().keySet()){
             System.out.printf("%s. %s%n", taskNumber, toDoList.getTask(taskNumber));
         }

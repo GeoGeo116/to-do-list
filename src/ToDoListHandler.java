@@ -21,6 +21,8 @@ public class ToDoListHandler {
             int userInput = scanner.nextInt();
             if(userInput == 1){
                 menu.printTasks();
+                scanner.nextLine();
+                scanner.nextLine();
             }else if(userInput==2){
                 menu.printAddTask();
                 scanner.nextLine();
