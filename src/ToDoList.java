@@ -45,6 +45,14 @@ public class ToDoList {
     }
 
     /**
+     * Resets the object and clears all tasks from to do list
+     */
+    public void clearList(){
+        this.list = new TreeMap<>();
+        this.count = 0;
+    }
+
+    /**
      * Prints out the current state of the to-do list
      */
     public void printList(){

@@ -69,7 +69,11 @@ public class ToDoListHandler {
         menu.printDeleteTask();
         try{
             int taskNumber = scanner.nextInt();
-            if(toDoList.getToDoList().containsKey(taskNumber)) {
+            if(taskNumber==0){
+                //Do nothing
+            }else if(taskNumber==-1){
+                toDoList.clearList();
+            }else if(toDoList.getToDoList().containsKey(taskNumber)) {
                 toDoList.deleteTask(taskNumber);
             }else{
                 System.out.println("There is no task with that number");

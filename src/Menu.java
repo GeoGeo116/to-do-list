@@ -40,7 +40,7 @@ import java.util.TreeMap;
      */
     public void printDeleteTask(){
         printTasks();
-        System.out.println("Please enter your task number");
+        System.out.println("Please enter your task number, -1 to clear all or 0 to proceed without deleting");
     }
 
     /**
@@ -48,8 +48,6 @@ import java.util.TreeMap;
      */
     public void printTasks(){
         System.out.println("===========TO-DO LIST===========");
-        for(Integer taskNumber : toDoList.getToDoList().keySet()){
-            System.out.printf("%s. %s%n", taskNumber, toDoList.getTask(taskNumber));
-        }
+        toDoList.printList();
     }
 }
