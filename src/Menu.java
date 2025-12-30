@@ -15,6 +15,7 @@ import java.util.TreeMap;
      *  1. View to-do list
      *  2. Add a task
      *  3. Delete a task
+     *  4. Exit the program
      */
     public void printMenu(){
         System.out.println("===========MENU===========");
